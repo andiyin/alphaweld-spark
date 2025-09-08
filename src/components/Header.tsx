@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Search, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import alphaweldLogo from "@/assets/alphaweld-logo.png";
+import alphaweldLogo from "@/assets/alphaweld-logo-new.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

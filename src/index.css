@@ -12,15 +12,15 @@
     --background: 0 0% 100%;
     --foreground: 210 100% 20%;
 
-    /* Alphaweld Brand Orange */
-    --primary: 37 97% 53%;
+    /* Alphaweld Brand Orange - Updated for new logo */
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 37 97% 48%;
+    --primary-hover: 25 95% 48%;
 
-    /* Industrial Blue */
-    --secondary: 210 100% 20%;
+    /* Alphaweld Industrial Blue - Updated for new logo */
+    --secondary: 210 100% 35%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 210 100% 25%;
+    --secondary-hover: 210 100% 30%;
 
     /* Technical Gray System */
     --muted: 210 10% 96%;
@@ -36,14 +36,14 @@
     
     --border: 210 15% 92%;
     --input: 210 15% 96%;
-    --ring: 37 97% 53%;
+    --ring: 25 95% 53%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(37 97% 53%), hsl(37 97% 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(210 100% 20%), hsl(210 100% 25%));
+    /* Gradients - Updated for new logo colors */
+    --gradient-primary: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 100% 35%), hsl(210 100% 30%));
     --gradient-industrial: linear-gradient(135deg, hsl(210 15% 15%), hsl(210 15% 25%));
 
     /* Shadows */

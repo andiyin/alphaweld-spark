@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import alphaweldLogo from "@/assets/alphaweld-logo.png";
+import alphaweldLogo from "@/assets/alphaweld-logo-new.png";
 
 const Footer = () => {
   return (
