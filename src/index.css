@@ -1,42 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Alphaweld Design System - Industrial Welding Technology */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 100% 20%;
 
+    /* Alphaweld Brand Orange */
+    --primary: 37 97% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 37 97% 48%;
+
+    /* Industrial Blue */
+    --secondary: 210 100% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 210 100% 25%;
+
+    /* Technical Gray System */
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 15% 45%;
+    --muted-dark: 210 15% 88%;
+
+    --accent: 210 10% 94%;
+    --accent-foreground: 210 100% 20%;
+
+    /* UI Elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 100% 20%;
+    
+    --border: 210 15% 92%;
+    --input: 210 15% 96%;
+    --ring: 37 97% 53%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(37 97% 53%), hsl(37 97% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 100% 20%), hsl(210 100% 25%));
+    --gradient-industrial: linear-gradient(135deg, hsl(210 15% 15%), hsl(210 15% 25%));
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -8px hsl(210 100% 20% / 0.15);
+    --shadow-industrial: 0 8px 30px -12px hsl(210 100% 20% / 0.25);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
     --sidebar-background: 0 0% 98%;
 
