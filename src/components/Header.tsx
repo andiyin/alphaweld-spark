@@ -1,32 +1,49 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Search, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useTranslation } from "react-i18next";
 import alphaweldLogo from "@/assets/alphaweld-logo-new.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   
   const navigation = [
-    { name: "Highlights", href: "/" },
+    { name: t('nav.home'), href: "/" },
     { 
-      name: "Produkte", 
+      name: t('nav.products'), 
       href: "/products",
       submenu: [
-        { name: "MIG/MAG Brenner", href: "/products/mig-mag" },
-        { name: "WIG Brenner", href: "/products/tig" },
-        { name: "Plasma Brenner", href: "/products/plasma" },
-        { name: "Schweißmaschinen", href: "/products/machines" },
-        { name: "Wolframelektroden", href: "/products/electrodes" },
-        { name: "Arbeitsschutz", href: "/products/safety" },
+        { name: t('products.categories.migmag'), href: "/products/migmag-brenner" },
+        { name: t('products.categories.wig'), href: "/products/wig-brenner" },
+        { name: t('products.categories.plasma'), href: "/products/plasma-brenner" },
+        { name: t('products.categories.machines'), href: "/products/machines" },
+        { name: t('products.categories.tungsten'), href: "/products/tungsten" },
+        { name: t('products.categories.safety'), href: "/products/arbeitsschutz" },
       ]
     },
-    { name: "News", href: "/news" },
-    { name: "Über uns", href: "/about" },
-    { name: "Kontakt", href: "/contact" },
+    { name: t('nav.news'), href: "/news" },
+    { name: t('nav.about'), href: "/about" },
+    { name: t('nav.contact'), href: "/contact" },
   ];
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
+
+  const handleLanguageChange = (language: string) => {
+    i18n.changeLanguage(language);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b shadow-elegant">
@@ -40,12 +57,22 @@ const Header = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="gap-1">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className={`gap-1 ${i18n.language === 'de' ? 'text-primary' : ''}`}
+              onClick={() => handleLanguageChange('de')}
+            >
               <Globe className="h-4 w-4" />
               DE
             </Button>
             <div className="h-4 w-px bg-border" />
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className={i18n.language === 'en' ? 'text-primary' : ''}
+              onClick={() => handleLanguageChange('en')}
+            >
               EN
             </Button>
           </div>
@@ -100,11 +127,13 @@ const Header = () => {
             {/* Search */}
             <div className="hidden md:block">
               {isSearchOpen ? (
-                <div className="flex items-center gap-2">
+                <form onSubmit={handleSearch} className="flex items-center gap-2">
                   <Input
-                    placeholder="Suchen..."
+                    placeholder={t('common.search')}
                     className="w-64"
                     autoFocus
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                   />
                   <Button
                     variant="ghost"
@@ -113,7 +142,7 @@ const Header = () => {
                   >
                     <X className="h-4 w-4" />
                   </Button>
-                </div>
+                </form>
               ) : (
                 <Button
                   variant="ghost"

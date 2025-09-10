@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import News from "./pages/News";
 import Products from "./pages/Products";
+import SearchResults from "./pages/SearchResults";
 import NotFound from "./pages/NotFound";
 import SR9 from "./pages/products/SR9";
 import P50 from "./pages/products/P50";
@@ -18,6 +19,8 @@ import MIGMAGBrenner from "./pages/categories/MIGMAGBrenner";
 import WIGBrenner from "./pages/categories/WIGBrenner";
 import PlasmaBrenner from "./pages/categories/PlasmaBrenner";
 import Arbeitsschutz from "./pages/categories/Arbeitsschutz";
+import CategoryPage from "./components/CategoryPage";
+import ProductDetailPage from "./components/ProductDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -33,15 +36,26 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/migmag-brenner" element={<MIGMAGBrenner />} />
-          <Route path="/products/wig-brenner" element={<WIGBrenner />} />
-          <Route path="/products/plasma-brenner" element={<PlasmaBrenner />} />
-          <Route path="/products/arbeitsschutz" element={<Arbeitsschutz />} />
-          <Route path="/products/sr-9" element={<SR9 />} />
-          <Route path="/products/p-50" element={<P50 />} />
-          <Route path="/products/aw-550" element={<AW550 />} />
-          <Route path="/products/black-star-pro" element={<BlackStarPro />} />
-          <Route path="/products/*" element={<div className="min-h-screen flex items-center justify-center"><div className="text-center"><h1 className="text-2xl font-bold mb-4">Produktseiten</h1><p className="text-muted-foreground">Weitere Produktseiten werden in Kürze verfügbar sein.</p></div></div>} />
+          <Route path="/search" element={<SearchResults />} />
+          
+          {/* Category Pages */}
+          <Route path="/products/migmag-brenner" element={<CategoryPage categoryId="migmag-brenner" />} />
+          <Route path="/products/wig-brenner" element={<CategoryPage categoryId="wig-brenner" />} />
+          <Route path="/products/plasma-brenner" element={<CategoryPage categoryId="plasma-brenner" />} />
+          <Route path="/products/arbeitsschutz" element={<CategoryPage categoryId="arbeitsschutz" />} />
+          
+          {/* Individual Product Pages */}
+          <Route path="/products/aw-150" element={<ProductDetailPage productId="aw-150" />} />
+          <Route path="/products/aw-240" element={<ProductDetailPage productId="aw-240" />} />
+          <Route path="/products/aw-400" element={<ProductDetailPage productId="aw-400" />} />
+          <Route path="/products/aw-550" element={<ProductDetailPage productId="aw-550" />} />
+          <Route path="/products/sr-9" element={<ProductDetailPage productId="sr-9" />} />
+          <Route path="/products/sr-17" element={<ProductDetailPage productId="sr-17" />} />
+          <Route path="/products/sr-26" element={<ProductDetailPage productId="sr-26" />} />
+          <Route path="/products/p-50" element={<ProductDetailPage productId="p-50" />} />
+          <Route path="/products/p-70" element={<ProductDetailPage productId="p-70" />} />
+          <Route path="/products/black-star-pro" element={<ProductDetailPage productId="black-star-pro" />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

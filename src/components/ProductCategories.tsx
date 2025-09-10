@@ -1,6 +1,7 @@
 import { Flame, Zap, Shield, Wrench, CircuitBoard, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const ProductCategories = () => {
   const categories = [
@@ -9,42 +10,48 @@ const ProductCategories = () => {
       title: "MIG/MAG Brenner",
       description: "Hochwertige Schweißbrenner für professionelle Anwendungen",
       products: ["AW-150", "AW-240", "AW-400", "AW-550"],
-      color: "text-primary"
+      color: "text-primary",
+      link: "/products/migmag-brenner"
     },
     {
       icon: Zap,
       title: "WIG Brenner",
       description: "Präzise WIG-Brenner für anspruchsvolle Schweißarbeiten",
       products: ["SR-9", "SR-17", "SR-26", "SR-18"],
-      color: "text-secondary"
+      color: "text-secondary",
+      link: "/products/wig-brenner"
     },
     {
       icon: CircuitBoard,
       title: "Plasma Brenner",
       description: "Moderne Plasma-Technologie für saubere Schnitte",
       products: ["P-50", "P-70", "P-100", "P-130"],
-      color: "text-primary"
+      color: "text-primary",
+      link: "/products/plasma-brenner"
     },
     {
       icon: Wrench,
       title: "Schweißmaschinen",
       description: "Zuverlässige Schweißanlagen für jeden Einsatzbereich",
       products: ["Elektrodeninverter", "WIG-Anlagen", "MIG/MAG", "Plasma"],
-      color: "text-secondary"
+      color: "text-secondary",
+      link: "/products/machines"
     },
     {
       icon: HardHat,
       title: "Arbeitsschutz",
       description: "Schutzausrüstung höchster Qualität",
       products: ["Black Star Pro", "Automatikhelme", "Handschuhe", "Schürzen"],
-      color: "text-primary"
+      color: "text-primary",
+      link: "/products/arbeitsschutz"
     },
     {
       icon: Shield,
       title: "Wolframelektroden",
       description: "Präzisionselektroden für optimale Schweißergebnisse",
       products: ["WP grün", "WC20 grau", "WL15 gold", "WT20 rot"],
-      color: "text-secondary"
+      color: "text-secondary",
+      link: "/products/tungsten"
     }
   ];
 
@@ -94,8 +101,10 @@ const ProductCategories = () => {
                           </span>
                         ))}
                       </div>
-                      <Button variant="outline" size="sm" className="group-hover:border-primary group-hover:text-primary">
-                        Mehr erfahren
+                      <Button asChild variant="outline" size="sm" className="group-hover:border-primary group-hover:text-primary">
+                        <Link to={category.link}>
+                          Mehr erfahren
+                        </Link>
                       </Button>
                     </div>
                   </div>

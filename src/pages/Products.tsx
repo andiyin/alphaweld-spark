@@ -10,49 +10,49 @@ const Products = () => {
       id: 1,
       title: "MIG / MAG BRENNER",
       image: "/lovable-uploads/73735c92-654e-44f7-8bc3-75ae1f977ba8.png",
-      link: "/products/aw-550",
+      link: "/products/migmag-brenner",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 2,
       title: "WIG BRENNER", 
       image: "/lovable-uploads/ee8d0dd7-081d-48c0-a478-a164baf93dba.png",
-      link: "/products/sr-9",
+      link: "/products/wig-brenner",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 3,
       title: "PLASMA BRENNER",
       image: "/lovable-uploads/c130a5f9-172a-4bb6-8b27-b25bb1b24901.png",
-      link: "/products/p-50",
+      link: "/products/plasma-brenner",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 4,
       title: "SCHWEISSMASCHINEN",
       image: "/lovable-uploads/2890bddb-14c9-4356-9ef2-cdaad5887d85.png",
-      link: "/products",
+      link: "/products/machines",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 5,
       title: "WOLFRAM-ANSCHLEIFGERÄT",
       image: "/lovable-uploads/d5baef27-480d-4e81-a82b-63ba4c102335.png",
-      link: "/products",
+      link: "/products/grinding",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 6,
       title: "WOLFRAMELEKTRODEN",
       image: "/lovable-uploads/ee8d0dd7-081d-48c0-a478-a164baf93dba.png",
-      link: "/products",
+      link: "/products/tungsten",
       gradient: "from-blue-600 to-blue-800"
     },
     {
       id: 7,
       title: "ARBEITSSCHUTZ",
       image: "/lovable-uploads/73735c92-654e-44f7-8bc3-75ae1f977ba8.png",
-      link: "/products/black-star-pro",
+      link: "/products/arbeitsschutz",
       gradient: "from-orange-500 to-orange-600"
     }
   ];
@@ -108,7 +108,7 @@ const Products = () => {
             {productCategories.slice(4, 7).map((category) => (
               <Card key={category.id} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <CardContent className="p-0">
-                  <Link to={category.id === 7 ? `/products/${productCategories.find(c => c.id === 'arbeitsschutz')?.id}` : "/products"} className="block">
+                  <Link to={category.link} className="block">
                         <div className={`relative bg-gradient-to-br ${category.gradient} aspect-square flex items-center justify-center p-8`}>
                           <img 
                             src={category.image} 
