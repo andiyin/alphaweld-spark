@@ -302,31 +302,67 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Google Maps */}
+          {/* Google Maps and Address */}
           <div className="mt-16">
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle>So finden Sie uns</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="h-96 bg-muted rounded-b-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <p className="text-lg font-semibold mb-2">Google Maps Integration</p>
-                    <p className="text-muted-foreground">
-                      Geisweider Str. 130, D-57078 Siegen
-                    </p>
-                    <Button 
-                      variant="outline" 
-                      className="mt-4"
-                      onClick={() => window.open("https://maps.google.com/?q=Geisweider+Str.+130,+57078+Siegen", "_blank")}
-                    >
-                      In Google Maps öffnen
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Address Information */}
+              <div className="space-y-6">
+                <Card className="shadow-elegant">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <MapPin className="h-5 w-5 text-primary" />
+                      Standort
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <p className="font-semibold text-lg">Alphaweld GmbH</p>
+                      <p className="text-muted-foreground">Geisweider Str. 130</p>
+                      <p className="text-muted-foreground">D-57078 Siegen</p>
+                      
+                      <div className="pt-4 border-t mt-4">
+                        <p className="text-sm font-semibold mb-2">Anfahrt</p>
+                        <Button 
+                          variant="outline" 
+                          className="w-full"
+                          onClick={() => window.open("https://maps.google.com/?q=Geisweider+Str.+130,+57078+Siegen", "_blank")}
+                        >
+                          <MapPin className="h-4 w-4 mr-2" />
+                          Route berechnen
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Google Maps */}
+              <div className="lg:col-span-2">
+                <Card className="shadow-elegant">
+                  <CardHeader>
+                    <CardTitle>So finden Sie uns</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="h-96 bg-muted rounded-b-lg flex items-center justify-center">
+                      <div className="text-center">
+                        <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+                        <p className="text-lg font-semibold mb-2">Google Maps Integration</p>
+                        <p className="text-muted-foreground mb-4">
+                          Geisweider Str. 130, D-57078 Siegen
+                        </p>
+                        <Button 
+                          variant="outline"
+                          onClick={() => window.open("https://maps.google.com/?q=Geisweider+Str.+130,+57078+Siegen", "_blank")}
+                        >
+                          In Google Maps öffnen
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
