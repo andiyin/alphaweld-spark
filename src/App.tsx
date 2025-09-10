@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import News from "./pages/News";
 import Products from "./pages/Products";
 import SearchResults from "./pages/SearchResults";
+import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
 import SR9 from "./pages/products/SR9";
 import P50 from "./pages/products/P50";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/products" element={<Products />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
           
           {/* Category Pages */}
           <Route path="/products/migmag-brenner" element={<CategoryPage categoryId="migmag-brenner" />} />
