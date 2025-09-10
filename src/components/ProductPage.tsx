@@ -13,10 +13,17 @@ interface TechnicalSpec {
 interface ProductPageProps {
   productName: string;
   category: string;
+  categoryName: string;
+  categoryId: string;
   productImage: string;
+  productImages?: string[];
   technicalSpecs: TechnicalSpec[];
+  features?: string[];
   explosionDrawing?: string;
   description?: string;
+  shortDescription?: string;
+  articleNumber?: string;
+  datasheet?: string;
 }
 
 const ProductPage = ({

@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Discover our comprehensive range of high-quality welding products",
+    "categories": {
+      "migmag": "MIG/MAG Torches",
+      "wig": "TIG Torches",
+      "plasma": "Plasma Torches", 
+      "machines": "Welding Machines",
+      "safety": "Safety Equipment",
+      "tungsten": "Tungsten Electrodes",
+      "grinding": "Tungsten Grinder"
+    },
+    "details": "View Details",
+    "request": "Request Product",
+    "downloadSheet": "Download Datasheet",
+    "consultation": "Free Consultation",
+    "technicalSpecs": "Technical Specifications",
+    "explosionDrawing": "Explosion Drawing",
+    "imageGallery": "Image Gallery",
+    "downloads": "Downloads",
+    "backToOverview": "Back to Overview"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Not found",
+    "search": "Search...",
+    "readMore": "Learn more",
+    "contact": "Contact us",
+    "requestConsultation": "Get consultation now",
+    "requestCatalog": "Request catalog"
+  },
+  "contact": {
+    "title": "Contact",
+    "getInTouch": "Get in touch",
+    "consultation": "Need individual consultation?",
+    "consultationText": "Our expert team supports you in selecting the optimal welding solution for your specific requirements."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "products": "Products"
+  }
+}

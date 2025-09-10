@@ -15,9 +15,14 @@ const SR9 = () => {
     <ProductPage
       productName="SR-9"
       category="WIG BRENNER"
+      categoryName="WIG Brenner"
+      categoryId="wig-brenner"
       productImage="/lovable-uploads/b18f28a7-bbcf-4e80-bdb1-20658741c220.png"
       technicalSpecs={technicalSpecs}
       description="Luftgekühlter WIG-Brenner für präzise Schweißarbeiten mit hoher Belastbarkeit und ergonomischem Design."
+      shortDescription="Luftgekühlter Präzisionsbrener für anspruchsvolle Arbeiten"
+      features={["Präzise Schweißführung", "Ergonomisches Design", "Hohe Belastbarkeit", "Zuverlässige Performance"]}
+      articleNumber="SR-9-001"
     />
   );
 };

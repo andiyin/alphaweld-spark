@@ -77,10 +77,10 @@ const Products = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {/* First 4 products - top row */}
-              {productCategories.slice(0, 4).map((category) => (
-                <Card key={category.id} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                  <CardContent className="p-0">
-                    <Link to={category.link} className="block">
+        {productCategories.slice(0, 4).map((category) => (
+          <Card key={category.id} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <CardContent className="p-0">
+              <Link to={`/products/${category.id}`} className="block">
                       <div className={`relative bg-gradient-to-br ${category.gradient} aspect-square flex items-center justify-center p-8`}>
                         <img 
                           src={category.image} 
@@ -105,10 +105,10 @@ const Products = () => {
             {/* Bottom row - 3 products centered */}
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-                {productCategories.slice(4, 7).map((category) => (
-                  <Card key={category.id} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                    <CardContent className="p-0">
-                      <Link to={category.link} className="block">
+            {productCategories.slice(4, 7).map((category) => (
+              <Card key={category.id} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <CardContent className="p-0">
+                  <Link to={category.id === 7 ? `/products/${productCategories.find(c => c.id === 'arbeitsschutz')?.id}` : "/products"} className="block">
                         <div className={`relative bg-gradient-to-br ${category.gradient} aspect-square flex items-center justify-center p-8`}>
                           <img 
                             src={category.image} 

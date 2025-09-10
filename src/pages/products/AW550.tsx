@@ -15,9 +15,14 @@ const AW550 = () => {
     <ProductPage
       productName="AW-550"
       category="MIG/MAG BRENNER"
+      categoryName="MIG/MAG Brenner"
+      categoryId="migmag-brenner"
       productImage="/lovable-uploads/ee8d0dd7-081d-48c0-a478-a164baf93dba.png"
       technicalSpecs={technicalSpecs}
       description="Hochleistungs-MIG/MAG-Brenner für industrielle Anwendungen mit wassergekühlter Ausführung."
+      shortDescription="Premium Hochleistungsbrener für maximale Leistung"
+      features={["Maximale Leistung", "Wassergekühlt", "Industriestandard", "Langlebigkeit"]}
+      articleNumber="AW-550-001"
     />
   );
 };

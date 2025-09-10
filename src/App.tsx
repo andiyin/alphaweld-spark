@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./i18n";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -13,6 +14,10 @@ import SR9 from "./pages/products/SR9";
 import P50 from "./pages/products/P50";
 import AW550 from "./pages/products/AW550";
 import BlackStarPro from "./pages/products/BlackStarPro";
+import MIGMAGBrenner from "./pages/categories/MIGMAGBrenner";
+import WIGBrenner from "./pages/categories/WIGBrenner";
+import PlasmaBrenner from "./pages/categories/PlasmaBrenner";
+import Arbeitsschutz from "./pages/categories/Arbeitsschutz";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +33,10 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/migmag-brenner" element={<MIGMAGBrenner />} />
+          <Route path="/products/wig-brenner" element={<WIGBrenner />} />
+          <Route path="/products/plasma-brenner" element={<PlasmaBrenner />} />
+          <Route path="/products/arbeitsschutz" element={<Arbeitsschutz />} />
           <Route path="/products/sr-9" element={<SR9 />} />
           <Route path="/products/p-50" element={<P50 />} />
           <Route path="/products/aw-550" element={<AW550 />} />

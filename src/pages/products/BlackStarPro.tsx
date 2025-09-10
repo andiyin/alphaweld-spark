@@ -15,9 +15,14 @@ const BlackStarPro = () => {
     <ProductPage
       productName="Black Star Pro"
       category="ARBEITSSCHUTZ"
+      categoryName="Arbeitsschutz"
+      categoryId="arbeitsschutz"
       productImage="/lovable-uploads/2890bddb-14c9-4356-9ef2-cdaad5887d85.png"
       technicalSpecs={technicalSpecs}
       description="Premium Automatikschutzhelm mit großem Sichtfeld und schneller Reaktionszeit für professionelle Schweißarbeiten."
+      shortDescription="Premium Automatikschutzhelm für professionelle Anwendungen"
+      features={["Großes Sichtfeld", "Automatische Abdunkelung", "Schnelle Reaktion", "Ergonomisches Design"]}
+      articleNumber="BSP-001"
     />
   );
 };

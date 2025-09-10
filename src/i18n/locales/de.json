@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über uns",
+    "news": "Aktuelles",
+    "contact": "Kontakt"
+  },
+  "products": {
+    "title": "Produkte",
+    "subtitle": "Entdecken Sie unser umfassendes Sortiment hochwertiger Schweißprodukte",
+    "categories": {
+      "migmag": "MIG/MAG Brenner",
+      "wig": "WIG Brenner", 
+      "plasma": "Plasma Brenner",
+      "machines": "Schweißmaschinen",
+      "safety": "Arbeitsschutz",
+      "tungsten": "Wolframelektroden",
+      "grinding": "Wolfram-Anschleifgerät"
+    },
+    "details": "Details anzeigen",
+    "request": "Produkt anfragen",
+    "downloadSheet": "Datenblatt herunterladen",
+    "consultation": "Kostenlose Beratung",
+    "technicalSpecs": "Technische Daten",
+    "explosionDrawing": "Explosionszeichnung",
+    "imageGallery": "Bildergalerie",
+    "downloads": "Downloads",
+    "backToOverview": "Zurück zur Übersicht"
+  },
+  "common": {
+    "loading": "Lade...",
+    "error": "Ein Fehler ist aufgetreten",
+    "notFound": "Nicht gefunden",
+    "search": "Suchen...",
+    "readMore": "Mehr erfahren",
+    "contact": "Kontakt aufnehmen",
+    "requestConsultation": "Jetzt beraten lassen",
+    "requestCatalog": "Katalog anfordern"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "getInTouch": "Kontaktieren Sie uns",
+    "consultation": "Benötigen Sie eine individuelle Beratung?",
+    "consultationText": "Unser Expertenteam unterstützt Sie bei der Auswahl der optimalen Schweißlösung für Ihre spezifischen Anforderungen."
+  },
+  "breadcrumb": {
+    "home": "Startseite",
+    "products": "Produkte"
+  }
+}
