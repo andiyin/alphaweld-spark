@@ -301,33 +301,6 @@ const Contact = () => {
               </Card>
             </div>
           </div>
-
-          {/* Google Maps */}
-          <div className="mt-16">
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle>So finden Sie uns</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="h-96 bg-muted rounded-b-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <p className="text-lg font-semibold mb-2">Google Maps Integration</p>
-                    <p className="text-muted-foreground">
-                      Geisweider Str. 130, D-57078 Siegen
-                    </p>
-                    <Button 
-                      variant="outline" 
-                      className="mt-4"
-                      onClick={() => window.open("https://maps.google.com/?q=Geisweider+Str.+130,+57078+Siegen", "_blank")}
-                    >
-                      In Google Maps öffnen
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </Layout>
