@@ -12,6 +12,7 @@ import News from "./pages/News";
 import Products from "./pages/Products";
 import SearchResults from "./pages/SearchResults";
 import Datenschutz from "./pages/Datenschutz";
+import AGB from "./pages/AGB";
 import NotFound from "./pages/NotFound";
 import SR9 from "./pages/products/SR9";
 import P50 from "./pages/products/P50";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/agb" element={<AGB />} />
           
           {/* Category Pages */}
           <Route path="/products/migmag-brenner" element={<CategoryPage categoryId="migmag-brenner" />} />
