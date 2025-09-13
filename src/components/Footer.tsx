@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import alphaweldLogo from "@/assets/alphaweld-logo-new.png";
@@ -90,25 +90,6 @@ const Footer = () => {
               <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
               <Link to="/agb" className="hover:text-primary transition-colors">AGB</Link>
               
-            </div>
-            
-            {/* Social Media */}
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-white/80">Folgen Sie uns:</span>
-              <a 
-                href="#" 
-                className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-4 w-4" />
-              </a>
             </div>
           </div>
           
