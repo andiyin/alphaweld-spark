@@ -28,19 +28,6 @@ const Footer = () => {
               Zuverlässigkeit seit Jahren.
             </p>
             
-            {/* Newsletter */}
-            <div className="mb-6">
-              <h4 className="font-semibold mb-3">Newsletter abonnieren</h4>
-              <div className="flex gap-2">
-                <Input 
-                  placeholder="Ihre E-Mail-Adresse"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                />
-                <Button variant="hero" size="default">
-                  Abonnieren
-                </Button>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -102,7 +89,7 @@ const Footer = () => {
               <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
               <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
               <Link to="/agb" className="hover:text-primary transition-colors">AGB</Link>
-              <Link to="/lieferkettengesetz" className="hover:text-primary transition-colors">Lieferkettengesetz</Link>
+              
             </div>
             
             {/* Social Media */}
