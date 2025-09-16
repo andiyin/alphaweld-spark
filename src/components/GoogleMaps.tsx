@@ -1,5 +1,6 @@
 import { MapPin, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 interface GoogleMapsProps {
   address: string;
@@ -7,6 +8,7 @@ interface GoogleMapsProps {
 }
 
 const GoogleMaps = ({ address, className = "" }: GoogleMapsProps) => {
+  const { t } = useTranslation();
   const encodedAddress = encodeURIComponent(address);
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
   const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBvOkBw3cLx7cLx7cLx7cLx7cLx7cLx7cL&q=${encodedAddress}`;
@@ -39,8 +41,8 @@ const GoogleMaps = ({ address, className = "" }: GoogleMapsProps) => {
         {/* Address overlay */}
         <div className="absolute bottom-4 left-4 right-4">
           <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
-            <p className="text-sm font-semibold text-foreground">Alphaweld GmbH</p>
-            <p className="text-xs text-muted-foreground">Geisweider Str. 130, 57078 Siegen</p>
+            <p className="text-sm font-semibold text-foreground">{t('maps.company')}</p>
+            <p className="text-xs text-muted-foreground">{t('maps.address')}</p>
           </div>
         </div>
         
@@ -59,7 +61,7 @@ const GoogleMaps = ({ address, className = "" }: GoogleMapsProps) => {
               className="flex items-center gap-2"
             >
               <ExternalLink className="h-3 w-3" />
-              <span className="text-xs">Öffnen</span>
+              <span className="text-xs">{t('maps.open')}</span>
             </a>
           </Button>
         </div>

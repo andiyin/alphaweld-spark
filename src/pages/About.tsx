@@ -2,8 +2,11 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, Shield, Leaf, Users, Target, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
       <div className="min-h-screen bg-background">
@@ -11,12 +14,12 @@ const About = () => {
         <section className="bg-gradient-secondary text-white py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Über uns</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.title')}</h1>
               <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-primary">
-                UNTERNEHMENSPOLITIK
+                {t('about.subtitle')}
               </h2>
               <p className="text-xl mb-8 text-white/90">
-                QUALITÄT. VERANTWORTUNG. NACHHALTIGKEIT.
+                {t('about.motto')}
               </p>
             </div>
           </div>
@@ -27,11 +30,7 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-                Willkommen bei der Alphaweld GmbH – Ihrem Großhandelspartner für hochwertige 
-                schweißtechnische Produkte. Unsere Unternehmenspolitik ist Ausdruck unseres 
-                Selbstverständnisses als verantwortungsvoller Akteur im internationalen Handel. 
-                Sie vereint unser Qualitätsversprechen mit unserem Engagement für Umwelt, Ethik 
-                und faire Lieferketten.
+                {t('about.intro')}
               </p>
             </div>
           </div>
@@ -50,21 +49,20 @@ const About = () => {
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <Shield className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">Qualität und Kundenzufriedenheit</CardTitle>
+                      <CardTitle className="text-xl">{t('about.values.quality.title')}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      Wir stehen für geprüfte Qualität, normgerechte Produkte und zuverlässigen Service. 
-                      Unsere Kunden profitieren von:
+                      {t('about.values.quality.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      <li>Hochwertigen, langlebigen Produkten</li>
-                      <li>Fachlicher Beratung durch erfahrene Spezialisten</li>
-                      <li>Lückenloser Qualitätskontrolle und Konformitätssicherung</li>
+                      {t('about.values.quality.items', { returnObjects: true }).map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                     <blockquote className="mt-6 border-l-4 border-primary pl-4 text-sm italic">
-                      "Unsere Kunden sollen sich nicht nur auf unsere Produkte verlassen können – sondern auch auf unser Wort."
+                      "{t('about.values.quality.quote')}"
                     </blockquote>
                   </CardContent>
                 </Card>
@@ -76,19 +74,18 @@ const About = () => {
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <Leaf className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">Nachhaltigkeit & Umweltschutz</CardTitle>
+                      <CardTitle className="text-xl">{t('about.values.sustainability.title')}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      Wir übernehmen Verantwortung für Mensch und Umwelt – heute und in Zukunft.
+                      {t('about.values.sustainability.description')}
                     </p>
-                    <p className="font-semibold mb-3">Unsere Prinzipien:</p>
+                    <p className="font-semibold mb-3">{t('about.values.sustainability.principles')}</p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      <li>Reduktion von Emissionen & Verpackungsmüll</li>
-                      <li>Bevorzugung ressourcenschonender Materialien</li>
-                      <li>Zusammenarbeit mit umweltzertifizierten Lieferanten (z.B. ISO 14001)</li>
-                      <li>Förderung nachhaltiger Logistiklösungen</li>
+                      {t('about.values.sustainability.items', { returnObjects: true }).map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
@@ -100,20 +97,18 @@ const About = () => {
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <Target className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">Einkauf mit Verantwortung</CardTitle>
+                      <CardTitle className="text-xl">{t('about.values.sourcing.title')}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      <strong>Ethisch. Sorgfältig. Konfliktfrei.</strong>
+                      <strong>{t('about.values.sourcing.subtitle')}</strong>
                     </p>
-                    <p className="text-sm mb-3">Unsere Einkaufsentscheidungen basieren auf strengen Kriterien:</p>
+                    <p className="text-sm mb-3">{t('about.values.sourcing.description')}</p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      <li>Keine Kinder- oder Zwangsarbeit</li>
-                      <li>Faire Arbeitsbedingungen & Gleichbehandlung</li>
-                      <li>Ausschluss von Konfliktmaterialien</li>
-                      <li>Lieferkettensorgfalt gemäß LkSG</li>
-                      <li>Transparente & nachvollziehbare Herkunft</li>
+                      {t('about.values.sourcing.items', { returnObjects: true }).map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
@@ -125,18 +120,17 @@ const About = () => {
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <Users className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">Integrität & soziale Verantwortung</CardTitle>
+                      <CardTitle className="text-xl">{t('about.values.integrity.title')}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      Vertrauen ist unser Fundament. Wir fördern:
+                      {t('about.values.integrity.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      <li>Eine offene, diskriminierungsfreie Unternehmenskultur</li>
-                      <li>Arbeitssicherheit & Gesundheitsschutz</li>
-                      <li>Vereinbarkeit von Beruf und Familie</li>
-                      <li>Gesetzestreue und ethisches Verhalten</li>
+                      {t('about.values.integrity.items', { returnObjects: true }).map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
@@ -148,18 +142,17 @@ const About = () => {
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <TrendingUp className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">Kontinuierliche Verbesserung</CardTitle>
+                      <CardTitle className="text-xl">{t('about.values.improvement.title')}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      Unsere Politik ist dynamisch – wie der Markt. Deshalb:
+                      {t('about.values.improvement.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      <li>Überprüfen und aktualisieren wir regelmäßig unsere Prozesse</li>
-                      <li>Schulen wir unsere Mitarbeitenden kontinuierlich</li>
-                      <li>Führen wir interne Audits & Lieferantenbewertungen durch</li>
-                      <li>Lernen wir aus Feedback – und setzen es um</li>
+                      {t('about.values.improvement.items', { returnObjects: true }).map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
@@ -172,14 +165,14 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-8 text-center">Downloads</h3>
+              <h3 className="text-2xl font-bold mb-8 text-center">{t('about.downloads.title')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <Card className="shadow-elegant hover:shadow-industrial transition-shadow">
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold mb-2">Lieferkettenpolitik</h4>
+                    <h4 className="font-semibold mb-2">{t('about.downloads.items.policy')}</h4>
                     <Button variant="outline" className="w-full">
-                      PDF herunterladen
+                      {t('about.downloads.download')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -187,9 +180,9 @@ const About = () => {
                 <Card className="shadow-elegant hover:shadow-industrial transition-shadow">
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold mb-2">Erklärung zur Rohstoffbeschaffung</h4>
+                    <h4 className="font-semibold mb-2">{t('about.downloads.items.sourcing')}</h4>
                     <Button variant="outline" className="w-full">
-                      PDF herunterladen
+                      {t('about.downloads.download')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -197,9 +190,9 @@ const About = () => {
                 <Card className="shadow-elegant hover:shadow-industrial transition-shadow">
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold mb-2">Bericht Konfliktmineralien 2024</h4>
+                    <h4 className="font-semibold mb-2">{t('about.downloads.items.minerals')}</h4>
                     <Button variant="outline" className="w-full">
-                      PDF herunterladen
+                      {t('about.downloads.download')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -207,11 +200,10 @@ const About = () => {
               
               <div className="text-center mt-12">
                 <p className="text-muted-foreground mb-4">
-                  Fragen zur Alphaweld-Unternehmenspolitik? Kontaktieren Sie uns über unser 
-                  Kontaktformular – wir stehen für Transparenz und einen offenen Dialog.
+                  {t('about.downloads.footer')}
                 </p>
                 <Button asChild>
-                  <a href="/contact">Kontakt aufnehmen</a>
+                  <a href="/contact">{t('common.contact')}</a>
                 </Button>
               </div>
             </div>
@@ -220,6 +212,7 @@ const About = () => {
       </div>
     </Layout>
   );
+};
 };
 
 export default About;
