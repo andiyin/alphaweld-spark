@@ -57,7 +57,7 @@ const About = () => {
                       {t('about.values.quality.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      {t('about.values.quality.items', { returnObjects: true }).map((item: string, index: number) => (
+                      {(t('about.values.quality.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -83,7 +83,7 @@ const About = () => {
                     </p>
                     <p className="font-semibold mb-3">{t('about.values.sustainability.principles')}</p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      {t('about.values.sustainability.items', { returnObjects: true }).map((item: string, index: number) => (
+                      {(t('about.values.sustainability.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -106,7 +106,7 @@ const About = () => {
                     </p>
                     <p className="text-sm mb-3">{t('about.values.sourcing.description')}</p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      {t('about.values.sourcing.items', { returnObjects: true }).map((item: string, index: number) => (
+                      {(t('about.values.sourcing.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -128,7 +128,7 @@ const About = () => {
                       {t('about.values.integrity.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      {t('about.values.integrity.items', { returnObjects: true }).map((item: string, index: number) => (
+                      {(t('about.values.integrity.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -150,7 +150,7 @@ const About = () => {
                       {t('about.values.improvement.description')}
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                      {t('about.values.improvement.items', { returnObjects: true }).map((item: string, index: number) => (
+                      {(t('about.values.improvement.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -212,7 +212,6 @@ const About = () => {
       </div>
     </Layout>
   );
-};
 };
 
 export default About;

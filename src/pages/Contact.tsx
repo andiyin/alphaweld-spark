@@ -346,7 +346,7 @@ const Contact = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold text-lg mb-3 text-foreground">{t('contact.why.title')}</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
-                    {t('contact.why.items', { returnObjects: true }).map((item: string, index: number) => (
+                    {(t('contact.why.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                       <p key={index}>{item}</p>
                     ))}
                   </div>
