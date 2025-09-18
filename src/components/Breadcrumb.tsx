@@ -15,10 +15,10 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
   const { t } = useTranslation();
 
   return (
-    <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+    <nav className="flex items-center space-x-2 text-sm text-white/80 mb-6">
       <Link 
         to="/" 
-        className="flex items-center hover:text-primary transition-colors"
+        className="flex items-center hover:text-white transition-colors"
       >
         <Home className="h-4 w-4 mr-1" />
         {t('breadcrumb.home')}
@@ -26,16 +26,16 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
       
       {items.map((item, index) => (
         <div key={index} className="flex items-center">
-          <ChevronRight className="h-4 w-4 mx-2" />
+          <ChevronRight className="h-4 w-4 mx-2 text-white/60" />
           {item.href ? (
             <Link 
               to={item.href} 
-              className="hover:text-primary transition-colors"
+              className="hover:text-white transition-colors"
             >
               {item.label}
             </Link>
           ) : (
-            <span className="text-foreground font-medium">{item.label}</span>
+            <span className="text-white font-medium">{item.label}</span>
           )}
         </div>
       ))}

@@ -76,42 +76,42 @@ const ProductCategories = () => {
           {categories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={index} className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-br ${
-                      category.color === 'text-primary' 
-                        ? 'from-primary/10 to-primary/20' 
-                        : 'from-secondary/10 to-secondary/20'
-                    }`}>
-                      <IconComponent className={`h-6 w-6 ${category.color}`} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {category.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">
-                        {category.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {category.products.map((product, idx) => (
-                          <span 
-                            key={idx}
-                            className="px-2 py-1 text-xs bg-accent text-accent-foreground rounded-md"
-                          >
-                            {product}
-                          </span>
-                        ))}
+              <Link key={index} to={category.link} className="group block">
+                <Card className="hover:shadow-industrial hover:scale-105 transition-all duration-300 cursor-pointer h-full">
+                  <CardContent className="p-6 h-full">
+                    <div className="flex items-start space-x-4 h-full">
+                      <div className={`p-3 rounded-lg bg-gradient-to-br transition-all duration-300 ${
+                        category.color === 'text-primary' 
+                          ? 'from-primary/10 to-primary/20 group-hover:from-primary/20 group-hover:to-primary/30' 
+                          : 'from-secondary/10 to-secondary/20 group-hover:from-secondary/20 group-hover:to-secondary/30'
+                      }`}>
+                        <IconComponent className={`h-6 w-6 ${category.color} transition-transform duration-300 group-hover:scale-110`} />
                       </div>
-                      <Button asChild variant="outline" size="sm" className="group-hover:border-primary group-hover:text-primary">
-                        <Link to={category.link}>
-                          {t('common.readMore')}
-                        </Link>
-                      </Button>
+                      <div className="flex-1 flex flex-col">
+                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                          {category.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 flex-grow">
+                          {category.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {category.products.map((product, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-2 py-1 text-xs bg-accent text-accent-foreground rounded-md group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300"
+                            >
+                              {product}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="text-sm text-primary font-medium group-hover:text-primary-foreground group-hover:bg-primary px-3 py-2 rounded-md transition-all duration-300 text-center">
+                          {t('common.readMore')} →
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>
