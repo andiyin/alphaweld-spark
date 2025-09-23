@@ -19,7 +19,7 @@ const useScrollToTop = () => {
       const target = e.target as HTMLElement;
       const link = target.closest('a[href]') as HTMLAnchorElement;
       
-      if (link && link.getAttribute('href')?.startsWith('/')) {
+      if(link && link.getAttribute('href')?.startsWith('/') && !link.getAttribute('href')?.endsWith('.pdf') && !link.hasAttribute('download')) {
         // Small delay to ensure the route change happens first
         setTimeout(() => {
           window.scrollTo({
