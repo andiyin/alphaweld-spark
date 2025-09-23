@@ -171,8 +171,10 @@ const About = () => {
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h4 className="font-semibold mb-2">{t('about.downloads.items.policy')}</h4>
-                    <Button variant="outline" className="w-full">
-                      {t('about.downloads.download')}
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href="/documents/Alphaweld_Lieferkettenpolitik.pdf" download>
+                        {t('about.downloads.download')}
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -181,8 +183,10 @@ const About = () => {
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h4 className="font-semibold mb-2">{t('about.downloads.items.sourcing')}</h4>
-                    <Button variant="outline" className="w-full">
-                      {t('about.downloads.download')}
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href="/documents/Alphaweld_Erklaerung_Rohstoffbeschaffung.pdf" download>
+                        {t('about.downloads.download')}
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -191,8 +195,10 @@ const About = () => {
                   <CardContent className="p-6 text-center">
                     <Download className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h4 className="font-semibold mb-2">{t('about.downloads.items.minerals')}</h4>
-                    <Button variant="outline" className="w-full">
-                      {t('about.downloads.download')}
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href="/documents/Alphaweld_Bericht_ueber_Konfliktmineralien_2024.pdf" download>
+                        {t('about.downloads.download')}
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
